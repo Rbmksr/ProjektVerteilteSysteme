@@ -1,6 +1,6 @@
 import { check, validationResult } from "express-validator";
 
-const shoesHerren = [
+const shoesMen = [
     {
         id: 0,
         title: "Project Hail Mary",
@@ -21,32 +21,32 @@ const shoesHerren = [
     },
 ];
 
-export const getShoeHerren = (req, res) => {
-    res.status(200).send(shoesHerren);
+export const getShoesMen = (req, res) => {
+    res.status(200).send(shoesMen);
 };
 
-export const findShoesHerren = (req, res) => {
-    let result = shoesHerren.filter((shoeHerren) => shoeHerren.title == req.query.title);
+export const findShoesMen = (req, res) => {
+    let result = shoesMen.filter((shoeMen) => shoeMen.title == req.query.title);
     res.status(200).send(result);
 };
 
-export const findShoesHerrenById = (req, res) => {
-    let shoeHerren = shoesHerren.find((b) => b.id == req.params.id);
-    res.status(200).send(shoeHerren);
+export const findShoesMenById = (req, res) => {
+    let shoeMen = shoesMen.find((b) => b.id == req.params.id);
+    res.status(200).send(shoeMen);
 };
 
-export const addShoeHerren = (req, res) => {
+export const addShoeMen = (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    let shoeHerren = req.body;
-    shoesHerren.push(shoeHerren);
-    res.status(201).send(`Added ${shoeHerren.title} to book collection`);
+    let shoeMen = req.body;
+    shoesMen.push(shoeMen);
+    res.status(201).send(`Added ${shoeMen.title} to book collection`);
 };
 
 // attached as second param in a route
-export const newShoeHerrenValidators = [
+export const newShoeMenValidators = [
     check("title").notEmpty().withMessage("Title field required"),
     check("author").notEmpty().withMessage("Author field required"),
 ];
