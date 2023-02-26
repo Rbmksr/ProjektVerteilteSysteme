@@ -1,17 +1,17 @@
 import express from "express";
 import {
-    findBooks,
-    findBooksById,
-    getBooks,
-    addBook,
-    newBookValidators,
-} from "./booksControllers.js";
+    getShoesChildren,
+    findShoesChildren,
+    findShoesChildrenById,
+    addShoeChildren,
+    newShoeChildrenValidators,
+} from "../controllers/shoe3Children";
 
-const router = express.Router();
+const shoeChildrenRouter = express.Router();
 
-router.get("/", getBooks);
-router.get("/search", findBooks);
-router.get("/:id", findBooksById);
-router.post("/", newBookValidators, addBook);
+router.get("/", getShoesChildren);
+router.get("/search", findShoesChildren);
+router.get("/:id", findShoesChildrenById);
+router.post("/", newShoeChildrenValidators, addShoeChildren);
 
-export default router;
+export default shoeChildrenRouter;

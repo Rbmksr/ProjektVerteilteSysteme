@@ -39,7 +39,7 @@ export const addShoeMen = (req, res) => {
   }
   let shoeMen = req.body;
   shoesMen.push(shoeMen);
-  res.status(201).send(`Added ${shoeMen.name} to book collection`);
+  res.status(201).send(`Added ${shoeMen.name} to shoeMen collection`);
 };
 
 // attached as second param in a route
