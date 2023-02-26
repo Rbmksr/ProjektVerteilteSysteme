@@ -9,6 +9,8 @@ const shoesWomen = [
         price: "150",
         size: "43",
         color: "black",
+        heelType: "platform",
+        heelHeight: "3cm - 5cm",
     },
 ];
 

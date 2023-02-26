@@ -4,11 +4,13 @@ const shoesChildren = [
     {
         id: 0,
         name: "ExampleShoe",
-        category: "Sneaker",
+        category: "sneaker",
         brand: "Nike",
         price: "150",
         size: "43",
         color: "black",
+        fastener: "laces",
+        gender: "girls",
     },
 ];
 

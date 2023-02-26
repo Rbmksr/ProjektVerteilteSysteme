@@ -10,12 +10,6 @@ const shoesMen = [
     size: "43",
     color: "black",
   },
-  //{
-  //    id: 1,
-  //    title: "Harrow the Ninth",
-  //    author: "Tamsyn Muir",
-  //    pages: 512,
-  //},
 ];
 
 export const getShoesMen = (req, res) => {

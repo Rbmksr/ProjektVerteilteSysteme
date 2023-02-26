@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 4000;
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 //app.use("/books", router);
 
 // wo läuft die app
