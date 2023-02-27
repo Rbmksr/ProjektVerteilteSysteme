@@ -7,7 +7,7 @@ const shoesChildren = [
         category: "sneaker",
         brand: "Nike",
         price: "150",
-        size: "43",
+        size: "35",
         color: "black",
         fastener: "laces",
         gender: "girls",
