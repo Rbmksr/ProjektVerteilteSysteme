@@ -30,6 +30,7 @@ export const findShoesChildrenById = (req, res) => {
     res.status(200).send(shoeChildren);
 };
 
+/*
 export const addShoeChildren = (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -38,6 +39,27 @@ export const addShoeChildren = (req, res) => {
     let shoeChildren = req.body;
     shoesChildren.push(shoeChildren);
     res.status(201).send(`Added ${shoeChildren.name} to shoeChildren collection`);
+};
+*/
+
+export const addShoeChildren = async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    const shoeChildren = new ChildrenShoe({
+        name: req.body.name,
+        category: req.body.category,
+        brand: req.body.brand,
+        price: req.body.price,
+        size: req.body.size,
+        color: req.body.color,
+        fastener: req.body.fastener,
+        gender: req.body.gender,
+    });
+    shoeChildren
+        .save(shoeChildren)
+        .then((shoeChildren) => res.status(201).send(shoeChildren));
 };
 
 // attached as second param in a route

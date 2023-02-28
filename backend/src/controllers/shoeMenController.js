@@ -1,4 +1,5 @@
 import { check, validationResult } from "express-validator";
+import { MenShoe } from "../models/shoeMenModel";
 
 const shoesMen = [
   {
@@ -26,6 +27,7 @@ export const findShoesMenById = (req, res) => {
   res.status(200).send(shoeMen);
 };
 
+/*
 export const addShoeMen = (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -34,6 +36,25 @@ export const addShoeMen = (req, res) => {
   let shoeMen = req.body;
   shoesMen.push(shoeMen);
   res.status(201).send(`Added ${shoeMen.name} to shoeMen collection`);
+};
+*/
+
+export const addShoeMen = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  const shoeMen = new MenShoe({
+    name: req.body.name,
+    category: req.body.category,
+    brand: req.body.brand,
+    price: req.body.price,
+    size: req.body.size,
+    color: req.body.color,
+  });
+  shoeMen
+    .save(shoeMen)
+    .then((shoeMen) => res.status(201).send(shoeMen));
 };
 
 // attached as second param in a route

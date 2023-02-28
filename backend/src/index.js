@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import mongoose from "mongoose";
 
 import shoeMenRouter from "./routes/shoeMenRoutes.js";
 import shoeWomenRouter from "./routes/shoeWomenRoutes.js";
@@ -13,6 +14,11 @@ app.use(bodyParser.json());
 app.use("/shoeMen", shoeMenRouter);
 app.use("/shoeWomen", shoeWomenRouter);
 app.use("/shoeChildren", shoeChildrenRouter);
+
+// mit db verbinden
+mongoose.connect("mongodb://mongo:27017/test").then(() => {
+    console.log("Database connected");
+});
 
 // wo läuft die app
 app.listen(port, () => {
