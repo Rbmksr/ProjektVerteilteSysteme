@@ -7,11 +7,11 @@ import {
     newShoeMenValidators,
 } from "../controllers/shoeMenController.js";
 
-const shoeMenRouter = express.Router();
+const router = express.Router();
 
 router.get("/", getShoesMen);
 router.get("/search", findShoesMen);
 router.get("/:id", findShoesMenById);
 router.post("/", newShoeMenValidators, addShoeMen);
 
-export default shoeMenRouter;
+export default router;
