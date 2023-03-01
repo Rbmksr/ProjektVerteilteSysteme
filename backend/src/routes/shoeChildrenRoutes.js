@@ -5,7 +5,7 @@ import {
     findShoesChildrenById,
     addShoeChildren,
     newShoeChildrenValidators,
-} from "../controllers/shoeChildrenController";
+} from "../controllers/shoeChildrenController.js";
 
 const router = express.Router();
 
