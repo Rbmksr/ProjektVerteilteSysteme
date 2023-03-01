@@ -1,5 +1,5 @@
 import { check, validationResult } from "express-validator";
-
+import { WomenShoe } from "../models/shoeWomenModel.js";
 const shoesWomen = [
     {
         id: 0,
