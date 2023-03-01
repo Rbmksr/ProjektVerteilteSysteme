@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import swaggerUi from "swagger-ui-express";
 
 import shoeMenRouter from "./routes/shoeMenRoutes.js";
 import shoeWomenRouter from "./routes/shoeWomenRoutes.js";
@@ -11,6 +12,7 @@ const app = express();
 const port = 4000;
 
 app.use(bodyParser.json());
+app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/shoeMen", shoeMenRouter);
 app.use("/shoeWomen", shoeWomenRouter);
 app.use("/shoeChildren", shoeChildrenRouter);
