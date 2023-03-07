@@ -55,6 +55,13 @@ export const deleteShoeWomen = async (req, res) => {
     res.status(200).send(result);
 };
 
+export const patchShoeWomen = async (req, res) => {
+    let result = await WomenShoe.findByIdAndUpdate(req.params.id, req.body, {
+        new: false,
+    });
+    res.status(200).send(result);
+};
+
 // attached as second param in a route
 export const newShoeWomenValidators = [
     check("name").notEmpty().withMessage("Name field required"),
