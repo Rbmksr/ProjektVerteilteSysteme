@@ -30,18 +30,6 @@ export const findShoesWomenById = (req, res) => {
     res.status(200).send(shoeWomen);
 };
 
-/*
-export const addShoeWomen = (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
-    let shoeWomen = req.body;
-    shoesWomen.push(shoeWomen);
-    res.status(201).send(`Added ${shoeWomen.name} to shoeWomen collection`);
-};
-*/
-
 export const addShoeWomen = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -60,6 +48,11 @@ export const addShoeWomen = async (req, res) => {
     shoeWomen
         .save(shoeWomen)
         .then((shoeWomen) => res.status(201).send(shoeWomen));
+};
+
+export const deleteShoeWomen = async (req, res) => {
+    let result = await WomenShoe.findByIdAndDelete(req.params.id);
+    res.status(200).send(result);
 };
 
 // attached as second param in a route
