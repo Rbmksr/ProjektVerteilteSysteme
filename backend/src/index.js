@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import swaggerDocs from "../swaggerDocs.js";
 import swaggerUi from "swagger-ui-express";
 
 import shoeMenRouter from "./routes/shoeMenRoutes.js";
