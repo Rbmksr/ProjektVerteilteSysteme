@@ -55,6 +55,27 @@ const swaggerDocs = {
                     },
                 },
             },
+            delete: {
+                tags: ["ShoesChildren"],
+                summary: "Delete shoes by id",
+                parameters: [
+                    {
+                        name: "id",
+                        in: "path",
+                        description: "Id of the shoe to delete",
+                        required: true,
+                        type: "string",
+                    },
+                ],
+                responses: {
+                    200: {
+                        description: "OK",
+                        schema: {
+                            $ref: "#/definitions/ShoesChildren"
+                        },
+                    },
+                },
+            },
         },
         "/{id}": {
             get: {
@@ -140,6 +161,27 @@ const swaggerDocs = {
                     },
                 },
             },
+            delete: {
+                tags: ["ShoesMen"],
+                summary: "Delete shoes by id",
+                parameters: [
+                    {
+                        name: "id",
+                        in: "path",
+                        description: "Id of the shoe to delete",
+                        required: true,
+                        type: "string",
+                    },
+                ],
+                responses: {
+                    200: {
+                        description: "OK",
+                        schema: {
+                            $ref: "#/definitions/ShoesMen"
+                        },
+                    },
+                },
+            },
         },
         "/{id}": {
             get: {
@@ -221,6 +263,27 @@ const swaggerDocs = {
                         description: "Created",
                         schema: {
                             $ref: "#/definitions/ShoesWomen",
+                        },
+                    },
+                },
+            },
+            delete: {
+                tags: ["ShoesWomen"],
+                summary: "Delete shoes by id",
+                parameters: [
+                    {
+                        name: "id",
+                        in: "path",
+                        description: "Id of the shoe to delete",
+                        required: true,
+                        type: "string",
+                    },
+                ],
+                responses: {
+                    200: {
+                        description: "OK",
+                        schema: {
+                            $ref: "#/definitions/ShoesWomen"
                         },
                     },
                 },
