@@ -16,7 +16,7 @@ class App extends React.Component {
     // as a state
     async fetchDisplayData() {
         let data = await fetchAllShoes();
-        this.setState({ shoes: data });
+        this.setState({ shoeMen: data });
     }
 
     // this is displayed on the screen
@@ -29,7 +29,7 @@ class App extends React.Component {
                 </button>
                 <div className="data">
                     {/* generates a div for every entry */}
-                    {this.state.shoes.map((shoeMen, key) => (
+                    {this.state.shoeMen.map((shoeMen, key) => (
                         <div key={key}>
                             {shoeMen.name} by {shoeMen.name}
                         </div>
