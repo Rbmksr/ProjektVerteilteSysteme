@@ -36,7 +36,7 @@ export const addShoeChildren = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const shoeChildren = new ChildrenShoe({
+    const shoesChildren = new ChildrenShoe({
         name: req.body.name,
         category: req.body.category,
         brand: req.body.brand,
@@ -46,8 +46,8 @@ export const addShoeChildren = async (req, res) => {
         fastener: req.body.fastener,
         gender: req.body.gender,
     });
-    shoeChildren
-        .save(shoeChildren)
+    shoesChildren
+        .save(shoesChildren)
         .then((shoeChildren) => res.status(201).send(shoeChildren));
 };
 

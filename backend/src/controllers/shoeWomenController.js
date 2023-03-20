@@ -10,7 +10,7 @@ const shoesWomen = [
         size: "43",
         color: "black",
         heelType: "platform",
-        heelHeight: "3cm - 5cm",
+        heelHeight: "5cm",
     },
 ];
 
@@ -35,7 +35,7 @@ export const addShoeWomen = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const shoeWomen = new WomenShoe({
+    const shoesWomen = new WomenShoe({
         name: req.body.name,
         category: req.body.category,
         brand: req.body.brand,
@@ -45,8 +45,8 @@ export const addShoeWomen = async (req, res) => {
         heelType: req.body.heelType,
         heelHeight: req.body.heelHeight,
     });
-    shoeWomen
-        .save(shoeWomen)
+    shoesWomen
+        .save(shoesWomen)
         .then((shoeWomen) => res.status(201).send(shoeWomen));
 };
 
