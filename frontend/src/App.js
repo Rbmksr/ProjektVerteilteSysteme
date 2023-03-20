@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchAllShoes } from "./RestClient";
+import { fetchAllShoeMen, fetchAllShoes } from "./RestClient";
 class App extends React.Component {
     // constructor initializes component state data
     // and binds methods
@@ -15,7 +15,7 @@ class App extends React.Component {
     // fetchAllBooks. as soon as the data is there it is set
     // as a state
     async fetchDisplayData() {
-        let data = await fetchAllShoes();
+        let data = await fetchAllShoeMen();
         this.setState({ shoeMen: data });
     }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
                     {/* generates a div for every entry */}
                     {this.state.shoeMen.map((shoeMen, key) => (
                         <div key={key}>
-                            {shoeMen.name} by {shoeMen.name}
+                            {shoeMen.name} for {shoeMen.price}
                         </div>
                     ))}
                 </div>
