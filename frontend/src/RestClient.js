@@ -1,6 +1,6 @@
 /* fetches api data from backend and extracts its json body */
-export async function fetchAllShoes() {
-  return await fetch("http://localhost:4000/", {
+export async function fetchAllShoeMen() {
+  return await fetch("http://localhost:4000/shoeMen", {
     mode: "cors",
   })
     .then((res) => {
