@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon -L src/index.js",
+    "d-up": "docker-compose up --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
